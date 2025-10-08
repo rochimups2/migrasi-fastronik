@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Migrasi Aplikasi Baru - Fastronic</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background-color: #fff5f5;
+      color: #333;
+    }
+
+    header {
+      background: linear-gradient(135deg, #ef4444, #b91c1c);
+      color: white;
+      text-align: center;
+      padding: 60px 20px;
+    }
+
+    header h1 {
+      font-size: 2.2em;
+      margin-bottom: 10px;
+    }
+
+    header p {
+      font-size: 1.1em;
+      opacity: 0.95;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 16px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      padding: 30px;
+      margin-bottom: 25px;
+      border-top: 5px solid #dc2626;
+    }
+
+    h2 {
+      font-size: 1.5em;
+      color: #b91c1c;
+      margin-bottom: 15px;
+    }
+
+    p {
+      line-height: 1.6;
+      font-size: 1em;
+      color: #444;
+    }
+    
+    h3 {
+      line-height: 1.6;
+      font-size: 0.8em;
+      color: #ffffff;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    ul li {
+      margin: 12px 0;
+      background: #fee2e2;
+      border-radius: 10px;
+      padding: 12px 16px;
+      transition: 0.2s;
+    }
+
+    ul li:hover {
+      background: #fecaca;
+      cursor: pointer;
+    }
+
+    ul li a {
+      text-decoration: none;
+      color: #991b1b;
+      font-weight: 500;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px 10px;
+      font-size: 0.9em;
+      color: #666;
+      border-top: 1px solid #fca5a5;
+      margin-top: 40px;
+      background: #fff1f2;
+    }
+
+    .cta-button {
+      display: inline-block;
+      background-color: #dc2626;
+      color: white;
+      padding: 14px 28px;
+      border-radius: 12px;
+      text-decoration: none;
+      font-weight: 600;
+      margin-top: 20px;
+      transition: 0.3s;
+    }
+
+    .cta-button:hover {
+      background-color: #b91c1c;
+    }
+
+    .download-section {
+      text-align: center;
+      margin-top: 30px;
+    }
+
+    .store-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      flex-wrap: wrap;
+      margin-top: 15px;
+    }
+
+    .store-buttons img {
+      height: 50px;
+      transition: 0.3s;
+    }
+
+    .store-buttons img:hover {
+      transform: scale(1.05);
+    }
+
+    /* Floating Chat Button */
+    .chat-button {
+      position: fixed;
+      bottom: 25px;
+      right: 25px;
+      background-color: #dc2626;
+      color: white;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      text-decoration: none;
+      font-size: 28px;
+      z-index: 1000;
+      transition: 0.3s;
+    }
+
+    .chat-button:hover {
+      background-color: #b91c1c;
+      transform: scale(1.1);
+    }
+
+    /* Popup Modal */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 2000;
+      left: 0; top: 0;
+      width: 100%; height: 100%;
+      background-color: rgba(0,0,0,0.6);
+      justify-content: center;
+      align-items: center;
+    }
+
+    .modal-content {
+      background: white;
+      padding: 20px;
+      border-radius: 14px;
+      max-width: 400px;
+      text-align: center;
+      animation: fadeIn 0.3s;
+    }
+
+    .modal-content img {
+      width: 100%;
+      border-radius: 10px;
+      margin-bottom: 15px;
+    }
+
+    .close-btn {
+      background-color: #dc2626;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 8px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .close-btn:hover {
+      background-color: #b91c1c;
+    }
+
+    @keyframes fadeIn {
+      from {opacity: 0; transform: scale(0.9);}
+      to {opacity: 1; transform: scale(1);}
+    }
+
+    @media (max-width: 600px) {
+      header h1 { font-size: 1.8em; }
+      .card { padding: 20px; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Migrasi ke Aplikasi Baru Fastronic</h1>
+  <h3>Selamat datang di aplikasi baru kami! Nikmati tampilan modern, cepat, dan fitur lengkap.</h3>
+  <a href="#tutorial" class="cta-button">Lihat Panduan Migrasi</a>
+</header>
+
+<div class="container">
+  <div class="card">
+    <h2>Kenapa Harus Migrasi?</h2>
+    <p>
+      Versi aplikasi lama akan segera dihentikan. Dengan aplikasi baru, Anda akan mendapatkan pengalaman lebih cepat, aman, dan praktis.
+      Semua fitur seperti transaksi, deposit, dan manajemen saldo kini hadir dalam tampilan baru yang lebih mudah digunakan.
+    </p>
+  </div>
+
+  <div class="card" id="tutorial">
+    <h2>Panduan & Tutorial</h2>
+    <p>Berikut daftar panduan penting untuk memudahkan Anda bertransisi ke aplikasi baru:</p>
+    <ul>
+      <li onclick="showTutorial('resetpin')">🔐 Tutorial Reset PIN</li>
+      <li onclick="showTutorial('ubahpin')">🔑 Cara Ubah PIN</li>
+      <li onclick="showTutorial('kirimstok')">💸 Cara Kirim Stok / Saldo</li>
+      <li onclick="showTutorial('bank')">🏦 Deposit via Transfer Bank</li>
+      <li onclick="showTutorial('qris')">📱 Deposit via QRIS</li>
+      <li onclick="showTutorial('alfamart')">🏪 Deposit via Alfamart</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h2>Cara Migrasi Akun</h2>
+    <p>
+      1️⃣ Pastikan nomor HP masih aktif.<br>
+      2️⃣ Unduh aplikasi baru melalui <b>Google Play Store</b>.<br>
+      3️⃣ Login menggunakan nomor dan PIN lama Anda.<br>
+      4️⃣ Jika diminta, lakukan reset PIN agar akun Anda aktif di sistem baru.<br>
+      5️⃣ Semua saldo dan riwayat transaksi akan otomatis tersinkronisasi.
+    </p>
+
+    <div class="download-section">
+      <p>📲 Unduh Aplikasi Baru</p>
+      <div class="store-buttons">
+        <a href="https://play.google.com/store" target="_blank">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Download di Play Store">
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  © 2025 Fastronic — Semua Hak Dilindungi<br>
+  Butuh bantuan? Hubungi kami di 
+  <b>WhatsApp: <a href="https://wa.me/6281329701020" target="_blank" style="color:#b91c1c;">0813-2970-1020</a></b><br>
+</footer>
+
+<!-- Floating WhatsApp Chat -->
+<a href="https://wa.me/6281329701020?text=Halo%20CS%2C%20saya%20ingin%20migrasi%20ke%20aplikasi%20baru" 
+   class="chat-button" target="_blank" title="Chat Customer Service">
+   💬
+</a>
+
+<!-- Popup Modal -->
+<div class="modal" id="tutorialModal">
+  <div class="modal-content">
+    <img id="tutorialImage" src="" alt="Tutorial">
+    <h3 id="tutorialTitle"></h3>
+    <p id="tutorialText"></p>
+    <button class="close-btn" onclick="closeTutorial()">Tutup</button>
+  </div>
+</div>
+
+<script>
+  const tutorials = {
+    resetpin: {
+      title: "Tutorial Reset PIN",
+      img: "https://via.placeholder.com/350x200?text=Reset+PIN",
+      text: "Buka menu Akun → Pengaturan → PIN Transaksi → Reset PIN. Masukkan PIN baru dan konfirmasi untuk mengaktifkan akun Anda kembali."
+    },
+    ubahpin: {
+      title: "Cara Ubah PIN",
+      img: "https://via.placeholder.com/350x200?text=Ubah+PIN",
+      text: "Masuk ke menu Pengaturan → Ubah PIN → Masukkan PIN lama dan baru Anda untuk keamanan tambahan."
+    },
+    kirimstok: {
+      title: "Cara Kirim Stok / Saldo",
+      img: "https://via.placeholder.com/350x200?text=Kirim+Saldo",
+      text: "Masuk menu Kirim Saldo → Masukkan nomor tujuan dan nominal → Konfirmasi transaksi dengan PIN Anda."
+    },
+    bank: {
+      title: "Deposit via Transfer Bank",
+      img: "https://via.placeholder.com/350x200?text=Deposit+Bank",
+      text: "Pilih menu Deposit → Transfer Bank → Pilih bank tujuan → Lakukan transfer sesuai nominal yang tertera."
+    },
+    qris: {
+      title: "Deposit via QRIS",
+      img: "https://via.placeholder.com/350x200?text=Deposit+QRIS",
+      text: "Masuk menu Deposit → Pilih QRIS → Scan kode QR menggunakan aplikasi keuangan Anda → Saldo otomatis masuk."
+    },
+    alfamart: {
+      title: "Deposit via Alfamart",
+      img: "https://via.placeholder.com/350x200?text=Deposit+Alfamart",
+      text: "Datang ke kasir Alfamart → Sebutkan ingin deposit Fastronic → Tunjukkan kode pelanggan Anda → Selesai."
+    }
+  };
+
+  function showTutorial(key) {
+    const data = tutorials[key];
+    document.getElementById("tutorialImage").src = data.img;
+    document.getElementById("tutorialTitle").innerText = data.title;
+    document.getElementById("tutorialText").innerText = data.text;
+    document.getElementById("tutorialModal").style.display = "flex";
+  }
+
+  function closeTutorial() {
+    document.getElementById("tutorialModal").style.display = "none";
+  }
+</script>
+
+</body>
+</html>
